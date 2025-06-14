@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login | NWORD SERVERSIDE</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    input {
-      padding: 10px;
-      margin: 5px;
-      width: 200px;
-      border: none;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #4338ca;
-    }
-  </style>
+  <title>N WORD SERVERSIDE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Iniciar sesión</h1>
-  <input id="username" placeholder="Usuario">
-  <input id="password" type="password" placeholder="Contraseña">
-  <button onclick="login()">Entrar</button>
-  <script src="script.js"></script>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/buy">Buy</a>
+    <a href="https://discord.gg/" target="_blank">Discord</a>
+  </nav>
+  <header>
+    <h1>N WORD SERVERSIDE</h1>
+    <p>Nunca fue tan fácil tener el poder de controlar los servers de muchos juegos.</p>
+    <a href="/dashboard" class="cta-button">Entrar al Panel</a>
+  </header>
+  <div class="content">
+    <div class="feature">
+      <h2>✨ Ejecución Serverside</h2>
+      <p>Controla servidores completos con scripts inyectados desde tu propio panel.</p>
+    </div>
+    <div class="feature">
+      <h2>⚡ Soporte a Juegos Infectados</h2>
+      <p>Conecta a tus experiencias modificadas y permite a los clientes ejecutar scripts automáticamente.</p>
+    </div>
+    <div class="feature">
+      <h2>💰 Sistema por Rangos</h2>
+      <p>Controla accesos por Key y nivel: Basic, Pro y Owner.</p>
+    </div>
+    <div class="feature">
+      <h2>🚀 Integración con Discord</h2>
+      <p>Genera claves desde tu bot y gestiona blacklist desde Discord.</p>
+    </div>
+    <div class="pricing">
+      <h2>🌐 Comprar Acceso</h2>
+      <div class="plan">
+        <h3>Basic - $10 USD</h3>
+        <span>Hasta 50 jugadores por servidor</span><br>
+        <button class="buy-button" onclick="window.open('https://tulink.com/basic')">Comprar Basic</button>
+      </div>
+      <div class="plan">
+        <h3>Pro - $20 USD</h3>
+        <span>Jugadores ilimitados y soporte completo</span><br>
+        <button class="buy-button" onclick="window.open('https://tulink.com/pro')">Comprar Pro</button>
+      </div>
+    </div>
+  </div>
+  <footer>&copy; 2025 N WORD SERVERSIDE. Todos los derechos reservados.</footer>
 </body>
 </html>
