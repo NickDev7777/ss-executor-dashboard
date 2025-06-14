@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login | SS Executor</title>
+  <title>Login | N WORD SERVERSIDE</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,14 +13,23 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      text-align: center;
     }
     h1 {
-      margin-bottom: 20px;
+      font-size: 36px;
+      margin-bottom: 5px;
+      color: #38bdf8;
+    }
+    h3 {
+      font-weight: normal;
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #cbd5e1;
     }
     input {
       padding: 10px;
       margin: 5px;
-      width: 200px;
+      width: 240px;
       border: none;
       border-radius: 5px;
     }
@@ -35,13 +44,38 @@
     button:hover {
       background-color: #4338ca;
     }
+    .discord {
+      margin-top: 20px;
+    }
+    .discord a {
+      color: #5865F2;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+    .discord img {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>Iniciar sesión</h1>
+  <h1>N WORD SERVERSIDE</h1>
+  <h3>Nunca fue tan fácil tener el poder de controlar los server de muchos juegos.</h3>
   <input id="username" placeholder="Usuario">
   <input id="password" type="password" placeholder="Contraseña">
   <button onclick="login()">Entrar</button>
+
+  <div class="discord">
+    <a href="https://discord.gg/tuservidor" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Icon">
+      Únete a nuestro Discord
+    </a>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
