@@ -1,121 +1,101 @@
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f0f0f;
-  color: #f5f5f5;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: white;
 }
-
 nav {
-  background-color: #111;
-  padding: 1rem;
+  background-color: #1e293b;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  gap: 30px;
+  padding: 15px 0;
 }
-
 nav a {
-  color: #ccc;
+  color: #94a3b8;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
 }
-
 nav a:hover {
-  color: #00ffcc;
+  color: #38bdf8;
 }
-
 header {
+  background: linear-gradient(90deg, #0ea5e9, #6366f1);
+  padding: 40px 20px;
   text-align: center;
-  padding: 4rem 2rem 2rem;
-  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
 }
-
 header h1 {
-  font-size: 3rem;
-  color: #00ffcc;
-  margin-bottom: 0.5rem;
+  font-size: 3em;
 }
-
 header p {
-  color: #aaa;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2em;
+  color: #dbeafe;
 }
-
-.cta-button {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.feature {
+  background-color: #1e293b;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+.feature h2 {
+  color: #60a5fa;
+}
+.pricing {
+  background-color: #1e293b;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 12px;
+  width: 100%;
+}
+.pricing h2 {
+  color: #38bdf8;
+}
+.plan {
+  margin: 20px 0;
+}
+.plan span {
+  font-size: 1.1em;
+  color: #cbd5e1;
+}
+.buy-button {
+  background-color: #22c55e;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  background-color: #00ffcc;
-  color: #000;
+  border-radius: 6px;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.buy-button:hover {
+  background-color: #16a34a;
+}
+footer {
+  background-color: #0f172a;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #1e293b;
+  color: #94a3b8;
+}
+.cta-button {
+  background-color: #38bdf8;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
 }
-
-.content {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.feature {
-  background-color: #1a1a1a;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  border-left: 5px solid #00ffcc;
-  border-radius: 5px;
-}
-
-.feature h2 {
-  margin: 0 0 0.5rem;
-  color: #00ffcc;
-}
-
-.feature p {
-  margin: 0;
-  color: #ccc;
-}
-
-.pricing {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.plan {
-  background-color: #1c1c1c;
-  border-radius: 8px;
-  padding: 2rem;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.plan h3 {
-  margin-top: 0;
-  color: #00ffcc;
-}
-
-.buy-button {
-  margin-top: 1rem;
-  background-color: #00ffcc;
-  color: #000;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #111;
-  font-size: 0.9rem;
-  color: #777;
+.cta-button:hover {
+  background-color: #0284c7;
 }
