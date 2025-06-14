@@ -1,51 +1,74 @@
-function login() {
-  const user = document.getElementById('username').value;
-  const pass = document.getElementById('password').value;
-  if (user && pass) {
-    localStorage.setItem('user', user);
-    window.location.href = 'dashboard.html';
+const API = ''
+const token = localStorage.getItem('token')
+
+async function login() {
+  const username = document.getElementById('username').value
+  const password = document.getElementById('password').value
+
+  const res = await fetch(`${API}/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  })
+
+  const data = await res.json()
+  if (data.token) {
+    localStorage.setItem('token', data.token)
+    window.location.href = "dashboard.html"
+  }
+}
+
+async function getUserInfo() {
+  const res = await fetch(`${API}/me`, {
+    headers: { 'Authorization': `Bearer ${token}` }
+  })
+  const data = await res.json()
+  document.getElementById('info').innerText = `Usuario: ${data.username} | Rango: ${data.rank}`
+  loadExecutorScript(data.rank)
+}
+
+async function activarKey() {
+  const key = document.getElementById('keyinput').value
+  const res = await fetch(`${API}/activate-key`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ key })
+  })
+  const data = await res.json()
+  alert(data.success ? `Rango actualizado a: ${data.newRank}` : data.error)
+  getUserInfo()
+}
+
+async function getGames() {
+  const res = await fetch(`${API}/mygames`, {
+    headers: { 'Authorization': `Bearer ${token}` }
+  })
+  const games = await res.json()
+  const list = document.getElementById('gamesList')
+  list.innerHTML = ""
+  games.forEach(game => {
+    const li = document.createElement('li')
+    li.innerText = `${game.name} (ID: ${game.placeId})`
+    list.appendChild(li)
+  })
+}
+
+function loadExecutorScript(rank) {
+  let script = ""
+  if (rank === "basic") {
+    script = `loadstring(game:HttpGet("https://tuweb.com/basic.lua"))()`
+  } else if (rank === "pro" || rank === "owner") {
+    script = `loadstring(game:HttpGet("https://tuweb.com/pro.lua"))()`
   } else {
-    alert('Completa ambos campos.');
+    script = "Activa una key para obtener tu script."
   }
+  document.getElementById('executorScript').innerText = script
 }
 
-function activarKey() {
-  const key = document.getElementById('keyinput').value;
-  if (key) {
-    localStorage.setItem('rank', key.startsWith('pro') ? 'pro' : key.startsWith('own') ? 'owner' : 'basic');
-    alert('Key activada: ' + localStorage.getItem('rank'));
-  }
+if (window.location.pathname.includes("dashboard")) {
+  getUserInfo()
+  getGames()
 }
-
-function cargarPanel() {
-  const user = localStorage.getItem('user');
-  const rank = localStorage.getItem('rank') || 'basic';
-  const info = document.getElementById('info');
-  const games = document.getElementById('gamesList');
-  const script = document.getElementById('executorScript');
-
-  if (!user) {
-    window.location.href = 'index.html';
-    return;
-  }
-
-  info.innerHTML = `<p>Bienvenido, <b>${user}</b> | Rango: <b>${rank}</b></p>`;
-
-  // Lista de juegos simulada
-  const juegos = [
-    { id: '123', nombre: 'Obby 2.0', players: 40 },
-    { id: '456', nombre: 'Survival Map', players: 65 },
-    { id: '789', nombre: 'Escape Room', players: 10 }
-  ];
-
-  games.innerHTML = '';
-  for (const juego of juegos) {
-    if (rank === 'basic' && juego.players > 50) continue;
-    games.innerHTML += `<li><b>${juego.nombre}</b> (${juego.players} jugadores) - ID: ${juego.id}</li>`;
-  }
-
-  script.innerText = `loadstring(game:HttpGet("https://tuweb.vercel.app/ss.lua"))()`;
-}
-
-if (window.location.pathname.includes('dashboard')) cargarPanel();
-
