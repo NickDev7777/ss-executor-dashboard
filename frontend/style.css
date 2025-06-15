@@ -1,114 +1,148 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f0f0f;
-  color: #f5f5f5;
   margin: 0;
-  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0e0e0e;
+  color: #f5f5f5;
+  overflow-x: hidden;
 }
-
 nav {
-  background-color: #111;
-  padding: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
-
-nav a {
+nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #00ffee;
+}
+nav .links a {
+  margin-left: 20px;
   color: #ccc;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
-
-nav a:hover {
-  color: #00ffcc;
+nav .links a:hover {
+  color: #00ffee;
 }
-
-header {
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 4rem 2rem 2rem;
-  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
 }
-
-header h1 {
+.hero h1 {
   font-size: 3rem;
-  color: #00ffcc;
-  margin-bottom: 0.5rem;
+  color: #00ffee;
 }
-
-header p {
-  color: #aaa;
-  font-size: 1.1rem;
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
   margin-bottom: 2rem;
 }
-
-.hero, .pricing, .content {
-  padding: 2rem;
-  text-align: center;
-}
-
-.feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.feature-card {
-  background-color: #1c1c1c;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 250px;
-  border-left: 5px solid #00ffcc;
-}
-
-.feature-card h2 {
-  color: #00ffcc;
-}
-
-.plan {
-  background-color: #1c1c1c;
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 300px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.plan h3 {
-  margin-top: 0;
-  color: #00ffcc;
-}
-
-.buy-button, button[type='submit'] {
-  background-color: #00ffcc;
+.cta-button {
+  padding: 1rem 2rem;
+  background: #00ffee;
   color: #000;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  text-decoration: none;
   font-weight: bold;
-}
-
-.login-box {
-  max-width: 400px;
-  margin: 4rem auto;
-  background-color: #1c1c1c;
-  padding: 2rem;
   border-radius: 8px;
-  text-align: center;
 }
-
-.login-box h2 {
-  color: #00ffcc;
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
-
-.login-box input {
+.dashboard {
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffee55;
+  width: 100%;
+  max-width: 400px;
+}
+.login-form h2 {
+  margin-bottom: 1rem;
+}
+.login-form input {
   width: 100%;
   padding: 0.8rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   border: none;
   border-radius: 5px;
+}
+.login-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #00ffee;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#loader {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  border: 8px solid #333;
+  border-top: 8px solid #00ffee;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.buy-section {
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plan {
+  background: #1f1f1f;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffee55;
+  text-align: center;
+}
+.plan h3 {
+  color: #00ffee;
+}
+.plan button {
+  background: #00ffee;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
