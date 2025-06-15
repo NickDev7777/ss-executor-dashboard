@@ -44,8 +44,9 @@ header p {
   margin-bottom: 2rem;
 }
 
-.hero {
+.hero, .pricing, .content {
   padding: 2rem;
+  text-align: center;
 }
 
 .feature-grid {
@@ -64,20 +65,6 @@ header p {
 }
 
 .feature-card h2 {
-  margin-top: 0;
-  color: #00ffcc;
-}
-
-.feature-card p {
-  color: #ccc;
-}
-
-.pricing {
-  padding: 2rem;
-  text-align: center;
-}
-
-.pricing h2 {
   color: #00ffcc;
 }
 
@@ -95,8 +82,7 @@ header p {
   color: #00ffcc;
 }
 
-.buy-button {
-  margin-top: 1rem;
+.buy-button, button[type='submit'] {
   background-color: #00ffcc;
   color: #000;
   padding: 0.7rem 1.5rem;
@@ -106,10 +92,23 @@ header p {
   font-weight: bold;
 }
 
-footer {
+.login-box {
+  max-width: 400px;
+  margin: 4rem auto;
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 8px;
   text-align: center;
-  padding: 1rem;
-  background-color: #111;
-  font-size: 0.9rem;
-  color: #777;
+}
+
+.login-box h2 {
+  color: #00ffcc;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 5px;
 }
