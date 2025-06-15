@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>N WORD SERVERSIDE</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
   <nav>
-    <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/login">Login</a>
-    <a href="/buy">Buy</a>
-    <a href="https://discord.gg/" target="_blank">Discord</a>
-  </nav>
-  <header>
-    <h1>N WORD SERVERSIDE</h1>
-    <p>Nunca fue tan fácil acceder a la herramienta más avanzada de ejecución serverside en Roblox.</p>
-  </header>
-  <section class="hero">
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h2>🔒 Seguridad</h2>
-        <p>Acceso exclusivo con control total.</p>
-      </div>
-      <div class="feature-card">
-        <h2>⚙️ Automatización</h2>
-        <p>Scripts remotos desde web centralizada.</p>
-      </div>
-      <div class="feature-card">
-        <h2>📈 Escalabilidad</h2>
-        <p>Planes ajustados a tus necesidades.</p>
-      </div>
+    <div class="logo">N WORD</div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/buy.html">Buy</a>
+      <a href="https://discord.gg/BQZZTgVGGY" target="_blank">Discord</a>
     </div>
-  </section>
-  <footer>&copy; 2025 N WORD SERVERSIDE. Todos los derechos reservados.</footer>
+  </nav>
+  <header class="hero">
+    <h1>N WORD SERVERSIDE</h1>
+    <p>Nunca fue tan fácil tener el poder de controlar los servidores de muchos juegos.</p>
+    <a class="cta-button" href="/buy.html">Comprar Ahora</a>
+  </header>
+  <script src="particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'particles-config.json');
+  </script>
 </body>
 </html>
